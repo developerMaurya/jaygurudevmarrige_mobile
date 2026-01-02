@@ -37,8 +37,8 @@ class _GalleryPageState extends State<GalleryPage>
   }
 
   List<String> _generateImages(String basePath, int count) {
-    // Generate images in descending order (e.g., 10, 9, ... 1)
-    return List.generate(count, (index) => '$basePath${count - index}.jpg');
+    // Generate images in ascending order (e.g., 1, 2, ... count)
+    return List.generate(count, (index) => '$basePath${index + 1}.jpg');
   }
 
   @override
