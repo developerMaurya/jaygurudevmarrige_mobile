@@ -97,6 +97,17 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: AppTheme.primaryDark.withOpacity(0.95),
         elevation: 0,
         centerTitle: false,
+        leading: _currentIndex != 0
+            ? IconButton(
+                icon: Icon(Icons.arrow_back, color: AppTheme.accentGold),
+                onPressed: () {
+                  setState(() {
+                    _currentIndex = 0;
+                  });
+                  _scrollToTop();
+                },
+              )
+            : null,
       ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
